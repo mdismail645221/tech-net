@@ -5,23 +5,26 @@ export interface counterState {
 }
 
 const initialState = {
-  count: 5,
+  count: 2,
 };
 
 const counterSlice = createSlice({
   name: "counter",
   initialState,
   reducers: {
-    increment: (state) => {
-      state.count += 1;
+    increment: (state, action) => {
+      state.count += action.payload;
     },
-    decrement: (state) => {
-      state.count -= 1;
+    decrement: (state, action) => {
+      state.count -= action.payload;
+    },
+    incrementByAmount: (state, action) => {
+      state.count -= action.payload;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement } = counterSlice.actions;
+export const { increment, decrement, incrementByAmount } = counterSlice.actions;
 
 export default counterSlice.reducer;

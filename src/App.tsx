@@ -16,7 +16,7 @@ function App() {
            <p className='counter'>Count: <span> {count}</span></p>
         </div>
         <div>
-          <button className="btn" onClick={()=> dispatch(decrement(2))}> Decrement</button>
+          <button className="btn" onClick={()=> dispatch(decrement(2))}> Decrement By</button>
         </div>
         <div>
           <button className='btn_increment_by_ammont' onClick={()=> dispatch(incrementByAmount(10))}>Increment By Amount</button>

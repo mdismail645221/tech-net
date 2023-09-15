@@ -1,10 +1,14 @@
-import { configureStore } from "@reduxjs/toolkit";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import counterSlice from "./features/counter/counterSlice";
+
+import logger from "redux-logger";
 
 export const store = configureStore({
   reducer: {
     conter: counterSlice,
   },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
